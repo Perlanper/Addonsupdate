@@ -50,11 +50,11 @@ CheckCacheExist(cache_path) #if cache doesn't exist creates it
 #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::actual downloading and move to cache:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 for i in addonlist:
-   #webbrowser.open(i)
+   webbrowser.open(i)
    #print("sleeping - waiting for website")
-   #time.sleep(10) # waiting time on webpage "latest_file" will not work correctly if not sleeping
+   time.sleep(10) # waiting time on webpage "latest_file" will not work correctly if not sleeping
    file_name = GetLatestDownload(download_path)
-   #os.rename(download_path +'\\' + file_name, cache_path +'\\' + file_name)
+   os.rename(download_path +'\\' + file_name, cache_path +'\\' + file_name)
 
 #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::extracting from downloaded archives::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 zipfile_names = os.listdir(cache_path)
@@ -70,5 +70,5 @@ for j in zipfile_names:
 # recursively and replaces the files inside of the folder instead.
 #---------------------------------------------------------------------------to do-------------------------------------------------------------------------------------
 # 1. investigate sleeping function when more than 2 addons are being downloaded
-# 2. implement a function that checks versions of the addons to avoid downloading a addon that is already up to date.
-# 3. make a simple GUI for user friendliness but mostly for fun and learing purposes.
+# 2. implement a function that checks versions of the addons to avoid downloading an addon that is already up to date.
+# 3. make a simple GUI for user friendliness but mostly for fun and learning purposes.
